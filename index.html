@@ -391,9 +391,9 @@ var POSTS = [
           "<p>Attack animations are in but not interruptible. Turn resolution needs to become a small state machine.</p>"
   },
   {
-    slug: "dungeon-generation",
-    title: "Merging the dungeon generator into the game loop",
-    date: "2026-07-11",
+    slug: "Turn-based class battle",
+    title: "Final Programming Project of High School?",
+    date: "2026-06-20",
     tag: "devlog",
     summary: "The generator worked in isolation. Isolation was the problem.",
     body: "<p>The generator had been a standalone script producing ASCII maps for a month. Wiring it into the real game loop broke almost every assumption.</p>" +
@@ -406,9 +406,9 @@ var POSTS = [
           "<p>A generator isn't done when the output looks good. It's done when it produces a level the rest of the game can make guarantees about.</p>"
   },
   {
-    slug: "starting-out",
-    title: "Starting a roguelike from an empty file",
-    date: "2026-06-02",
+    slug: "Blender rush",
+    title: "Learning Blender and Unity in 10 School days",
+    date: "2026-06-17",
     tag: "notes",
     summary: "Scope, the first commit, and picking Pygame on purpose.",
     body: "<p>First commit. A grid, a player character, and arrow keys that move it. That's it — and that was deliberate.</p>" +
@@ -476,7 +476,7 @@ function viewHome() {
   });
 
   var postsHTML = "";
-  latest.forEach(function (p) { postsHTML += postRow(p); });
+  latest.forEach(function (p) { postsHTML += postRow(p) + <br>; });
 
   return '<div class="wrap">' +
     '<header class="hero">' +
