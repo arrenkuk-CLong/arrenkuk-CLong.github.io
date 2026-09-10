@@ -434,7 +434,7 @@ function sortPosts() {
 }
 
 function postRow(p) {
-  return '<a class="post-row" href="#/logs/' + p.slug + '">' +
+  return '<a class="post-row" style = "display: block; margin-bottom: 12px;" href="#/logs/' + p.slug + '">' +
            '<span class="post-date">' + formatDate(p.date) + '</span>' +
            '<span>' +
              '<span class="post-title">' + p.title + '</span>' +
@@ -476,7 +476,7 @@ function viewHome() {
   });
 
   var postsHTML = "";
-  latest.forEach(function (p) { postsHTML += postRow(p) + <br>; });
+  latest.forEach(function (p) { postsHTML += postRow(p); });
 
   return '<div class="wrap">' +
     '<header class="hero">' +
