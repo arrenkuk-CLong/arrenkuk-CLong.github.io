@@ -39,6 +39,8 @@ nav {
   border-bottom: 1px solid #262a33;
   padding: 14px 0;
   z-index: 10;
+}
+    
 body.light nav {background: #fbfaf8; border-color: #e2ded6; }
 
 .nav-inner{
@@ -336,7 +338,7 @@ body.light footer { border-color: #e2ded6; }
     <span>© 2026 Arren Kuk · Montreal</span>
     <div class="socials">
       <a href="https://github.com/arrenkuk-clong" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/arren-kuk-aba68b377//" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/arren-kuk-aba68b377/" target="_blank">LinkedIn</a>
       <a href="mailto:arrenkuk@gmail.com">Email</a>
     </div>
   </div>
@@ -373,9 +375,9 @@ var SKILLS = [
 
 var POSTS = [
   {
-    slug: "Weekly Dungeon Crawler progress ",
-    title: "Progress update - ",
-    date: "2026-09-07 ",
+    slug: "weekly-dungeon-crawler-progress",
+    title: " Progress update",
+    date: "2026-09-07",
     tag: "devlog",
     summary: "Inventory system, dungeon generation and attack animations.",
     body: "<p>Two features shipped this week: recursive shadowcasting for field of view, and a bag UI backed by JSON instead of a hardcoded Python list.</p>" +
@@ -391,9 +393,9 @@ var POSTS = [
           "<p>Attack animations are in but not interruptible. Turn resolution needs to become a small state machine.</p>"
   },
   {
-    slug: "Turn-based Class Battle ",
-    title: "Final Programming Project of High School? ",
-    date: "2026-06-20 ",
+    slug: "turn-based-class-battle",
+    title: " Final Programming Project of High School",
+    date: "2026-06-20",
     tag: "devlog",
     summary: "Turn-based Class Battle Game.",
     body: "<p>The generator had been a standalone script producing ASCII maps for a month. Wiring it into the real game loop broke almost every assumption.</p>" +
@@ -406,11 +408,11 @@ var POSTS = [
           "<p>A generator isn't done when the output looks good. It's done when it produces a level the rest of the game can make guarantees about.</p>"
   },
   {
-    slug: "Blender rush ",
-    title: "Learning Blender and Unity in 10 School days - ",
-    date: "2026-06-17 ",
+    slug: "blender-rush",
+    title: " Learning Blender and Unity in 10 School days---",
+    date: "2026-06-17",
     tag: "notes",
-    summary: "Rigging, weight-painting, clothing, hair, inverse kinematics, run-cycle animation, applying FBX and animations in Unity",
+    summary: "Rigging, weight-painting, clothing, hair, inverse kinematics, run-cycle animation, applying FBX and animations in Unity.",
     body: "<p>First commit. A grid, a player character, and arrow keys that move it. That's it — and that was deliberate.</p>" +
           "<p>I picked Pygame over Unity for this one because I wanted to write the systems rather than configure them.</p>" +
           "<h2>Scope rules I set</h2>" +
@@ -434,7 +436,7 @@ function sortPosts() {
 }
 
 function postRow(p) {
-  return '<a class="post-row" style = "display: block; margin-bottom: 12px;" href="#/logs/' + p.slug + '">' +
+  return '<a class="post-row" href="#/logs/' + p.slug + '">' +
            '<span class="post-date">' + formatDate(p.date) + '</span>' +
            '<span>' +
              '<span class="post-title">' + p.title + '</span>' +
@@ -512,7 +514,7 @@ function viewLogs() {
     '<header class="article-head">' +
       '<a class="back" href="#/">← Back to work</a>' +
       '<h1>Dev Logs</h1>' +
-      '<p style="color:#a0a7b4">Short notes on what I\'m building, what broke, and what I\'d do differently. ' + POSTS.length + ' posts.</p>' +
+      '<p style="post-sub">Short notes on what I\'m building, what broke, and what I\'d do differently. ' + POSTS.length + ' posts.</p>' +
     '</header>' +
     '<div class="post-list">' + rows + '</div>' +
   '</div>';
