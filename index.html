@@ -180,49 +180,448 @@ body.light .tag { color: #5a6069; border-color: #e2ded6; }
 .card-links a { color: #e9b44c; margin-right: 16px; }
 .card-links a:hover { text-decoration: underline; }
 
-    </style>
+
+/* ---------- Skills ---------- */
+.skills {
+  border: 1px solid #262a33;
+  border-radius: 14px;
+  overflow: hidden;
+}
+body.light .skills { border-color: #e2ded6; }
+.skill-row {
+  display: flex;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #262a33;
+}
+body.light .skill-row { border-color: #e2ded6; }
+.skill-row:last-child { border-bottom: 0; }
+.skill-row dt {
+  width: 130px;
+  flex-shrink: 0;
+  color: #6e7684;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body.light .skill-row dt { color: #8b919b; }
+.skill-row dd { margin: 0; }
+
+/* ---------- Post list ---------- */
+.post-list { border-top: 1px solid #262a33; }
+body.light .post-list { border-color: #e2ded6; }
+.post-row {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid #262a33;
+}
+body.light .post-row { border-color: #e2ded6; }
+.post-row:hover .post-title { color: #e9b44c; }
+.post-date {
+  width: 100px;
+  flex-shrink: 0;
+  color: #6e7684;
+  font-size: 0.8rem;
+}
+.post-title { font-weight: 600; display: block; }
+.post-sub { color: #a0a7b4; font-size: 0.9rem; display: block; }
+body.light .post-sub { color: #5a6069; }
+.post-tag {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #6e7684;
+  border: 1px solid #262a33;
+  border-radius: 20px;
+  padding: 3px 9px;
+}
+body.light .post-tag { border-color: #e2ded6; }
+
+/* ---------- Article / prose ---------- */
+.article-head {
+  padding: 50px 0 20px;
+  border-bottom: 1px solid #262a33;
+  margin-bottom: 30px;
+}
+body.light .article-head { border-color: #e2ded6; }
+.article-head h1 { font-size: 2rem; }
+.back { color: #a0a7b4; display: inline-block; margin-bottom: 20px; }
+.back:hover { color: #e9b44c; }
+.article-meta { color: #6e7684; font-size: 0.85rem; }
+
+.prose p, .prose li { color: #a0a7b4; }
+body.light .prose p, body.light .prose li { color: #5a6069; }
+.prose h2 { font-size: 1.2rem; margin-top: 30px; }
+.prose code {
+  font-family: monospace;
+  font-size: 0.9em;
+  background: #1c1f27;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e9b44c;
+}
+body.light .prose code { background: #f4f2ee; }
+.prose pre {
+  background: #121419;
+  border: 1px solid #262a33;
+  border-radius: 10px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+body.light .prose pre { background: #f4f2ee; border-color: #e2ded6; }
+.prose blockquote {
+  border-left: 3px solid #e9b44c;
+  padding-left: 16px;
+  color: #6e7684;
+  font-style: italic;
+}
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #262a33;
+}
+body.light .article-nav { border-color: #e2ded6; }
+
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid #262a33;
+  padding: 30px 0;
+  margin-top: 40px;
+  color: #6e7684;
+  font-size: 0.85rem;
+}
+body.light footer { border-color: #e2ded6; }
+.foot-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.socials a { margin-left: 12px; color: #a0a7b4; }
+.socials a:hover { color: #e9b44c; }
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 620px) {
+  .post-row { flex-wrap: wrap; }
+  .post-tag { display: none; }
+  .skill-row { flex-direction: column; gap: 4px; }
+  .skill-row dt { width: auto; }
+  .hero h1 { font-size: 1.9rem; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>ARREN KUK</h1>
-        <p>Game Developer · UX Designer · AI Enthusiast</p>
-        <p>Montreal · McGill University</p>
-        <!-- Social Icons: LinkedIn, GitHub. -->
-    </header>
 
-    <button id="Resume">Click Me!</button>
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#/">Arren Kuk</a>
+    <a class="nav-link" href="#/" data-route="/">Work</a>
+    <a class="nav-link" href="#/logs" data-route="/logs">Dev Logs</a>
+    <button id="theme-toggle" title="Toggle theme">🌓</button>
+  </div>
+</nav>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <!-- Project 1 -->
-        <div class="project">
-            <h3>Roguelike Dungeon Crawler</h3>
-            <p>A turn-based dungeon crawler built in Python with Pygame. Features procedural generation and permadeath. Actively in development.</p>
-            <!-- Placeholder for a GitHub link, screenshot, or Itch.io embed -->
-        </div>
-    </section>
+<main id="main"></main>
 
-    <section id="skills">
-        <h2>Skills & Tools</h2>
-        <ul>
-            <li><strong>Languages:</strong> Python, C#</li>
-            <li><strong>Engines/Frameworks:</strong> Pygame, Unity</li>
-            <li><strong>Tools:</strong> Blender, Figma, Git</li>
-        </ul>
-    </section>
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Arren Kuk · Montreal</span>
+    <div class="socials">
+      <a href="https://github.com/arrenkuk-clong" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="mailto:arrenptkuk@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
 
-    <footer>
-        <p>Temporary portfolio by Arren Kuk · 2026</p>
-    </footer>
+<script>
+/* ============================================================
+   CONTENT — edit these to update your site.
+   ============================================================ */
 
-    <script>
-        // --- Javascript interactivity ---
-        const button = document.getElementById('Resume')
+var PROFILE = {
+  name: "Arren Kuk",
+  roles: "Game Developer · UX Designer · AI Enthusiast",
+  location: "Montreal · McGill University",
+  resume: "resume.pdf",
+  github: "https://github.com/arrenkuk-clong"
+};
 
-        button.addEventListener('click', () => {
-            alert('Hello');
-        });
-    </script>
+var PROJECTS = [
+  {
+    title: "Roguelike Dungeon Crawler",
+    status: "In development",
+    blurb: "A turn-based dungeon crawler in Python + Pygame. Procedural generation, shadowcast field of view, JSON inventory, and permadeath.",
+    tags: ["Python", "Pygame", "Procedural Gen", "JSON"],
+    links: [{ label: "Source", href: "https://github.com/arrenkuk-clong" }]
+  }
+];
+
+var SKILLS = [
+  { label: "Languages", items: ["Python", "C#", "JavaScript"] },
+  { label: "Engines",   items: ["Pygame", "Unity"] },
+  { label: "Tools",     items: ["Blender", "Figma", "Git"] }
+];
+
+var POSTS = [
+  {
+    slug: "fov-and-inventory",
+    title: "Shadowcasting, and why my bag kept eating potions",
+    date: "2026-08-24",
+    tag: "devlog",
+    summary: "Field of view landed. The inventory didn't — twice.",
+    body: "<p>Two features shipped this week: recursive shadowcasting for field of view, and a bag UI backed by JSON instead of a hardcoded Python list.</p>" +
+          "<h2>Field of view</h2>" +
+          "<p>Naive raycasting to every tile in a radius looked fine at radius 5 and cost a visible frame at radius 12. Shadowcasting splits the view into eight octants and walks rows outward, narrowing a visible slope range as walls are hit.</p>" +
+          "<pre><code>for octant in range(8):\n    cast_light(px, py, 1, 1.0, 0.0, radius, octant)</code></pre>" +
+          "<p>The subtle part is that tiles you've <strong>seen</strong> and tiles you can <strong>currently see</strong> are two different sets. Remembered tiles render dimmed; only the live set gets full brightness.</p>" +
+          "<h2>The bag that ate potions</h2>" +
+          "<p>Moving items to JSON meant item instances became dictionaries, and dictionaries compare by value. Stacking two potions merged them into one entry.</p>" +
+          "<ul><li>Give every instance a unique <code>uid</code> at spawn time.</li><li>Stack on <code>item_id</code>, never on the whole object.</li><li>Store a <code>count</code>, and let the UI read it.</li></ul>" +
+          "<blockquote>Lesson: identity and equality are not the same question, and inventories ask both.</blockquote>" +
+          "<h2>Next</h2>" +
+          "<p>Attack animations are in but not interruptible. Turn resolution needs to become a small state machine.</p>"
+  },
+  {
+    slug: "dungeon-generation",
+    title: "Merging the dungeon generator into the game loop",
+    date: "2026-07-11",
+    tag: "devlog",
+    summary: "The generator worked in isolation. Isolation was the problem.",
+    body: "<p>The generator had been a standalone script producing ASCII maps for a month. Wiring it into the real game loop broke almost every assumption.</p>" +
+          "<h2>What broke</h2>" +
+          "<ul><li><strong>Coordinate order.</strong> The generator thought in (row, col); the renderer thought in (x, y).</li>" +
+          "<li><strong>Connectivity.</strong> Random rooms plus corridors occasionally produced an unreachable room.</li>" +
+          "<li><strong>Spawns.</strong> Entities were placed before corridors were carved.</li></ul>" +
+          "<p>Fixing the order of operations removed three separate classes of bug at once.</p>" +
+          "<h2>Takeaway</h2>" +
+          "<p>A generator isn't done when the output looks good. It's done when it produces a level the rest of the game can make guarantees about.</p>"
+  },
+  {
+    slug: "starting-out",
+    title: "Starting a roguelike from an empty file",
+    date: "2026-06-02",
+    tag: "notes",
+    summary: "Scope, the first commit, and picking Pygame on purpose.",
+    body: "<p>First commit. A grid, a player character, and arrow keys that move it. That's it — and that was deliberate.</p>" +
+          "<p>I picked Pygame over Unity for this one because I wanted to write the systems rather than configure them.</p>" +
+          "<h2>Scope rules I set</h2>" +
+          "<ul><li>One dungeon. No overworld, no towns.</li><li>Permadeath, so no save system.</li><li>Placeholder art until the systems are fun.</li></ul>"
+  }
+];
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+
+function formatDate(iso) {
+  var d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" });
+}
+
+function sortPosts() {
+  return POSTS.slice().sort(function (a, b) {
+    return b.date.localeCompare(a.date);
+  });
+}
+
+function postRow(p) {
+  return '<a class="post-row" href="#/logs/' + p.slug + '">' +
+           '<span class="post-date">' + formatDate(p.date) + '</span>' +
+           '<span>' +
+             '<span class="post-title">' + p.title + '</span>' +
+             '<span class="post-sub">' + p.summary + '</span>' +
+           '</span>' +
+           '<span class="post-tag">' + p.tag + '</span>' +
+         '</a>';
+}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
+
+function viewHome() {
+  var latest = sortPosts().slice(0, 3);
+
+  var projectHTML = "";
+  PROJECTS.forEach(function (p) {
+    var tagHTML = "";
+    p.tags.forEach(function (t) { tagHTML += '<span class="tag">' + t + '</span>'; });
+    var linkHTML = "";
+    p.links.forEach(function (l) {
+      linkHTML += '<a href="' + l.href + '" target="_blank">' + l.label + ' →</a>';
+    });
+    projectHTML +=
+      '<article class="card">' +
+        '<div class="card-top"><h3>' + p.title + '</h3><span class="badge">' + p.status + '</span></div>' +
+        '<p>' + p.blurb + '</p>' +
+        '<div class="tags">' + tagHTML + '</div>' +
+        '<div class="card-links" style="margin-top:14px">' + linkHTML + '</div>' +
+      '</article>';
+  });
+
+  var skillHTML = "";
+  SKILLS.forEach(function (s) {
+    var items = "";
+    s.items.forEach(function (i) { items += '<span class="tag">' + i + '</span>'; });
+    skillHTML += '<div class="skill-row"><dt>' + s.label + '</dt><dd>' + items + '</dd></div>';
+  });
+
+  var postsHTML = "";
+  latest.forEach(function (p) { postsHTML += postRow(p); });
+
+  return '<div class="wrap">' +
+    '<header class="hero">' +
+      '<span class="eyebrow">Open to internships · Summer 2027</span>' +
+      '<h1>Building games,<br>one <span class="accent">system</span> at a time.</h1>' +
+      '<p class="lead">' + PROFILE.roles + '. I\'m ' + PROFILE.name.split(" ")[0] + ' — I build small, systems-driven games and write about what breaks along the way.</p>' +
+      '<div>' +
+        '<a class="btn btn-primary" href="#/logs">Read the dev logs →</a>' +
+        '<a class="btn" href="' + PROFILE.resume + '" target="_blank">Résumé</a>' +
+        '<a class="btn" href="' + PROFILE.github + '" target="_blank">GitHub</a>' +
+      '</div>' +
+    '</header>' +
+    '<hr>' +
+    '<section>' +
+      '<div class="sec-head"><h2>Selected work</h2></div>' +
+      '<div>' + projectHTML + '</div>' +
+    '</section>' +
+    '<section>' +
+      '<div class="sec-head"><h2>Recent dev logs</h2><a class="link-more" href="#/logs">View all (' + POSTS.length + ') →</a></div>' +
+      '<div class="post-list">' + postsHTML + '</div>' +
+    '</section>' +
+    '<section>' +
+      '<div class="sec-head"><h2>Skills &amp; tools</h2></div>' +
+      '<dl class="skills">' + skillHTML + '</dl>' +
+    '</section>' +
+  '</div>';
+}
+
+function viewLogs() {
+  var rows = "";
+  sortPosts().forEach(function (p) { rows += postRow(p); });
+  return '<div class="wrap">' +
+    '<header class="article-head">' +
+      '<a class="back" href="#/">← Back to work</a>' +
+      '<h1>Dev Logs</h1>' +
+      '<p style="color:#a0a7b4">Short notes on what I\'m building, what broke, and what I\'d do differently. ' + POSTS.length + ' posts.</p>' +
+    '</header>' +
+    '<div class="post-list">' + rows + '</div>' +
+  '</div>';
+}
+
+function viewPost(slug) {
+  var all = sortPosts();
+  var index = -1;
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].slug === slug) { index = i; break; }
+  }
+  if (index === -1) return viewNotFound();
+
+  var p = all[index];
+  var older = all[index + 1];
+  var newer = all[index - 1];
+
+  var olderHTML = older ? '<a class="btn" href="#/logs/' + older.slug + '">← Older</a>' : '<span></span>';
+  var newerHTML = newer ? '<a class="btn" href="#/logs/' + newer.slug + '">Newer →</a>' : '<span></span>';
+
+  return '<div class="wrap">' +
+    '<header class="article-head">' +
+      '<a class="back" href="#/logs">← All dev logs</a>' +
+      '<h1>' + p.title + '</h1>' +
+      '<div class="article-meta">' + formatDate(p.date) + ' · ' + p.tag + '</div>' +
+    '</header>' +
+    '<article class="prose">' + p.body + '</article>' +
+    '<div class="article-nav">' + olderHTML + newerHTML + '</div>' +
+  '</div>';
+}
+
+function viewNotFound() {
+  return '<div class="wrap" style="padding:100px 24px;text-align:center">' +
+    '<h1 style="font-size:3rem">404</h1>' +
+    '<p style="color:#a0a7b4;margin-bottom:26px">That page rolled a critical fail.</p>' +
+    '<a class="btn btn-primary" href="#/">Back home →</a>' +
+  '</div>';
+}
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+
+function render() {
+  var path = location.hash.replace(/^#/, "") || "/";
+  path = path.replace(/\/$/, "") || "/";
+
+  var html = "";
+  var title = "";
+
+  if (path === "/") {
+    html = viewHome();
+    title = PROFILE.name + " · Game Developer";
+  } else if (path === "/logs") {
+    html = viewLogs();
+    title = "Dev Logs · " + PROFILE.name;
+  } else if (path.indexOf("/logs/") === 0) {
+    var slug = path.slice(6);
+    var post = null;
+    for (var i = 0; i < POSTS.length; i++) {
+      if (POSTS[i].slug === slug) { post = POSTS[i]; break; }
+    }
+    html = viewPost(slug);
+    title = post ? post.title + " · " + PROFILE.name : "Not found";
+  } else {
+    html = viewNotFound();
+    title = "Not found";
+  }
+
+  document.getElementById("main").innerHTML = html;
+  document.title = title;
+
+  // Highlight active nav link
+  var links = document.querySelectorAll(".nav-link");
+  for (var j = 0; j < links.length; j++) {
+    var route = links[j].getAttribute("data-route");
+    var active = (route === "/") ? (path === "/") : (path.indexOf(route) === 0);
+    if (active) {
+      links[j].classList.add("active");
+    } else {
+      links[j].classList.remove("active");
+    }
+  }
+
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("hashchange", render);
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+
+var toggle = document.getElementById("theme-toggle");
+var saved = localStorage.getItem("theme");
+if (saved === "light") {
+  document.body.classList.add("light");
+}
+toggle.addEventListener("click", function () {
+  document.body.classList.toggle("light");
+  localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+});
+
+/* ============================================================
+   GO
+   ============================================================ */
+
+render();
+</script>
 </body>
 </html>
 
