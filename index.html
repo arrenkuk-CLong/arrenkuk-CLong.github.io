@@ -375,22 +375,30 @@ var SKILLS = [
 
 var POSTS = [
   {
-    slug: "weekly-dungeon-crawler-progress",
-    title: " Progress update",
+    slug: "dungeon-crawler-progress",
+    title: " Dungeon Crawler Progress update",
     date: "2026-09-07",
     tag: "devlog",
-    summary: "Inventory system, dungeon generation and attack animations.",
-    body: "<p>Two features shipped this week: recursive shadowcasting for field of view, and a bag UI backed by JSON instead of a hardcoded Python list.</p>" +
+    summary: "Inventory system, FOV, dungeon generation and attack animations.",
+    body: "<p>As my first shipping, I decided to take the foundation of 'Class Game' and turn it into a dungeon crawler. Four features added this week: camera offset for field of view, an inventory bag UI backed by JSON, attack animations, and procedural dungeon generation with BFS.</p>" +
           "<h2>Field of view</h2>" +
-          "<p>Naive raycasting to every tile in a radius looked fine at radius 5 and cost a visible frame at radius 12. Shadowcasting splits the view into eight octants and walks rows outward, narrowing a visible slope range as walls are hit.</p>" +
-          "<pre><code>for octant in range(8):\n    cast_light(px, py, 1, 1.0, 0.0, radius, octant)</code></pre>" +
-          "<p>The subtle part is that tiles you've <strong>seen</strong> and tiles you can <strong>currently see</strong> are two different sets. Remembered tiles render dimmed; only the live set gets full brightness.</p>" +
-          "<h2>The bag that ate potions</h2>" +
-          "<p>Moving items to JSON meant item instances became dictionaries, and dictionaries compare by value. Stacking two potions merged them into one entry.</p>" +
-          "<ul><li>Give every instance a unique <code>uid</code> at spawn time.</li><li>Stack on <code>item_id</code>, never on the whole object.</li><li>Store a <code>count</code>, and let the UI read it.</li></ul>" +
-          "<blockquote>Lesson: identity and equality are not the same question, and inventories ask both.</blockquote>" +
+          "<p>I created the function <strong>fov_tiles</strong> - where every tile within the visible FOV radius of 8 tiles relative to the player's (x, y) position is added to the set visible.</p>" +
+          "<pre><code>px, py = player_tile\n    for x in range(px - radius, px + radius + 1):\n    for y in range (py - radius, py + radius + 1):\n    if not dungeon.in_bounds(x, y):\n    continue</code></pre>" +
+          "<p> With the addition of a <strong>camera_offset</strong> function that centers the player tile to the center of the screen, you can achieve a result where dungeon tiles are only drawn within the FOV radius at the center of the screen.</p>" +
+          "<pre><code>visible = fov_tiles(dungeon, player_tile)\n offset_x, offset_y = camera_offset(player_tile, tile_px)\n #draw dungeon tiles\n    pygame.draw.rect(screen, TILE_COLORS[dungeon.tiles[x][y]], rect)</code></pre>" +
+          "<h2>Inventory JSON</h2>" +
+          "<p>A separate JSON dictionary file was created to store the name, effects, and quantity of an item. Currently, that item is only a health potion, but I plan to add more soon. The little bag icon I made on Piskel, Here's what it looks like.</p>" +
+          "<img src=\"Inventory_bag.png\" alt=\"Inventory UI Preview\" style=\"max-width: 100%; height: auto;\">" +
+          "<blockquote>The little bag icon toggles between open and closed every time the player presses the 'E' Key</blockquote>" +
+          "<h2>Sword and Eye attack animations</h2>" +
+          "<p>Using Piskel again, I created GIF animations for the Sword Character and Eye enemy. frames are iterated <code>self.current_frame += 1</code> every time the player or enemy attacks</p>" +
+          "<img src=\"SwordAnim.gif\" alt=\"Inventory UI Preview\" style=\"max-width: 100%; height: auto;\">" +
+          "<p>I added a 1-second interval between player attacks to allow animations to play out</p>" +
+          "<video src=\"attack_anim.mp4\" autoplay loop muted playsinline style=\"max-width: 100%; height: auto;\"></video>" +
+          "<h2>Procedural Dungeon Generation</h2>" +
+          "<p>I had Claude explain the entire concept by generating an interactive py.file that lets me toggle the layout of a bare-bones dungeon for my personal learning. I took that foundation - from carving corridors, determining connection orders, halving the map to fit rooms perfectly without overlapping, etc... and brought it to the main game file, </p>" +
           "<h2>Next</h2>" +
-          "<p>Attack animations are in but not interruptible. Turn resolution needs to become a small state machine.</p>"
+          "<p>Leveling system and true permadeath; I might introduce a boss enemy and create new animations. Though visual elements are not a top priority right now.</p>"
   },
   {
     slug: "turn-based-class-battle",
