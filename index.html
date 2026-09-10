@@ -7,7 +7,7 @@
 <meta name = "description" content = "Arren Kuk - SWE Freshman at McGill and a Game Dev on the side. I'm interested in building experiences">
 <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ---------- Basic reset ---------- */
+    
 * { box-sizing: border-box; }
 body { 
     margin: 0;
@@ -24,13 +24,13 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3 { margin: 0 0 10px 0; }
 p { margin: 0 0 12px 0; }
 ul { margin: 0 0 12px 0; padding-left: 20px; }
-/*-- layout --*/
+
 .wrap {
   max-width: 780px;
   margin: 0 auto;
   padding: 0 24px;
 }
-/*-- Navigation --*/
+
 nav {
   position: sticky;
   top: 0;
@@ -77,12 +77,109 @@ body.light .nav-inner a.nav-link.active {
 }
 body.light #theme-toggle { border-color: #e2ded6; color: #5a6069; }
 
-/*-- Buttons --*/
-        button{
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+
+.btn{
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid #262a33;
+  border-radius: 20px;
+  background: #16181e;
+  color: #e8eaf0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+body.light .btn { background: #ffffff; border-color: #e2ded6; color: #17181c; }
+.btn:hover { border-color: #3a3f4b; }
+
+.btn-primary {
+  background: #e9b44c;
+  border-color: #e9b44c;
+  color: #0c0d10;
+}
+
+.hero { padding: 60px 0 40px; }
+.hero h1 { font-size: 2.4rem; }
+.hero .accent { color: #e9b44c; }
+.hero .lead { color: #a0a7b4; max-width: 55ch; }
+body.light .hero .lead { color: #5a6069; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid #262a33;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #a0a7b4;
+  margin-bottom: 20px;
+}
+body.light .eyebrow { border-color: #e2ded6; color: #5a6069; }
+
+
+section { padding: 30px 0; }
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+.sec-head h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6e7684;
+}
+body.light .sec-head h2 { color: #8b919b; }
+.link-more { color: #a0a7b4; font-size: 0.85rem; }
+.link-more:hover { color: #e9b44c; }
+hr { border: 0; border-top: 1px solid #262a33; }
+body.light hr { border-color: #e2ded6; }
+
+
+
+.card {
+  border: 1px solid #262a33;
+  border-radius: 14px;
+  background: #16181e;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+body.light .card { background: #ffffff; border-color: #e2ded6; }
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.card p { color: #a0a7b4; font-size: 0.95rem; }
+body.light .card p { color: #5a6069; }
+
+.badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  border-radius: 20px;
+  color: #e9b44c;
+  border: 1px solid #e9b44c;
+}
+.tags { margin-top: 14px; }
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #a0a7b4;
+  border: 1px solid #262a33;
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin: 0 6px 6px 0;
+}
+body.light .tag { color: #5a6069; border-color: #e2ded6; }
+
+.card-links a { color: #e9b44c; margin-right: 16px; }
+.card-links a:hover { text-decoration: underline; }
+
     </style>
 </head>
 <body>
