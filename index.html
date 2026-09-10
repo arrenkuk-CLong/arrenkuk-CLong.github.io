@@ -336,8 +336,8 @@ body.light footer { border-color: #e2ded6; }
     <span>© 2026 Arren Kuk · Montreal</span>
     <div class="socials">
       <a href="https://github.com/arrenkuk-clong" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="mailto:arrenptkuk@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/arren-kuk-aba68b377//" target="_blank">LinkedIn</a>
+      <a href="mailto:arrenkuk@gmail.com">Email</a>
     </div>
   </div>
 </footer>
@@ -373,11 +373,11 @@ var SKILLS = [
 
 var POSTS = [
   {
-    slug: "Weekly Dungeon Crawler progress",
-    title: "Progress update - Inventory system, dungeon generation and attack animations",
-    date: "2026-09-07",
+    slug: "Weekly Dungeon Crawler progress ",
+    title: "Progress update - ",
+    date: "2026-09-07 ",
     tag: "devlog",
-    summary: "Field of view landed. The inventory didn't — twice.",
+    summary: "Inventory system, dungeon generation and attack animations.",
     body: "<p>Two features shipped this week: recursive shadowcasting for field of view, and a bag UI backed by JSON instead of a hardcoded Python list.</p>" +
           "<h2>Field of view</h2>" +
           "<p>Naive raycasting to every tile in a radius looked fine at radius 5 and cost a visible frame at radius 12. Shadowcasting splits the view into eight octants and walks rows outward, narrowing a visible slope range as walls are hit.</p>" +
@@ -391,11 +391,11 @@ var POSTS = [
           "<p>Attack animations are in but not interruptible. Turn resolution needs to become a small state machine.</p>"
   },
   {
-    slug: "Turn-based class battle",
-    title: "Final Programming Project of High School?",
-    date: "2026-06-20",
+    slug: "Turn-based Class Battle ",
+    title: "Final Programming Project of High School? ",
+    date: "2026-06-20 ",
     tag: "devlog",
-    summary: "The generator worked in isolation. Isolation was the problem.",
+    summary: "Turn-based Class Battle Game.",
     body: "<p>The generator had been a standalone script producing ASCII maps for a month. Wiring it into the real game loop broke almost every assumption.</p>" +
           "<h2>What broke</h2>" +
           "<ul><li><strong>Coordinate order.</strong> The generator thought in (row, col); the renderer thought in (x, y).</li>" +
@@ -406,11 +406,11 @@ var POSTS = [
           "<p>A generator isn't done when the output looks good. It's done when it produces a level the rest of the game can make guarantees about.</p>"
   },
   {
-    slug: "Blender rush",
-    title: "Learning Blender and Unity in 10 School days",
-    date: "2026-06-17",
+    slug: "Blender rush ",
+    title: "Learning Blender and Unity in 10 School days - ",
+    date: "2026-06-17 ",
     tag: "notes",
-    summary: "Scope, the first commit, and picking Pygame on purpose.",
+    summary: "Rigging, weight-painting, clothing, hair, inverse kinematics, run-cycle animation, applying FBX and animations in Unity",
     body: "<p>First commit. A grid, a player character, and arrow keys that move it. That's it — and that was deliberate.</p>" +
           "<p>I picked Pygame over Unity for this one because I wanted to write the systems rather than configure them.</p>" +
           "<h2>Scope rules I set</h2>" +
