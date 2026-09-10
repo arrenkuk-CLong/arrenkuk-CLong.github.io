@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arren Kuk · Game Dev Portfolio</title>
-    <style>
-        /* --- CSS Styling, dark, clean theme --- */
-        body { 
-            font-family : Sans-serif;
-            background-color: #f5e0dc;
-            color: #282828;
-            text-align: center;
-            pading-top: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arren Kuk · Portfolio</title>
+<meta name = "description" content = "Arren Kuk - SWE Freshman at McGill and a Game Dev on the side. I'm interested in building experiences">
+<link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ---------- Basic reset ---------- */
+* { box-sizing: border-box; }
+body { 
+    margin: 0;
+    font-family : Sans-serif;
+    background-color: #a89984;
+    color: #ffffff;
+    line-height: 1.6
+}
+body.light{
+    background: #fbfaf8;
+    color: #17181c;
+}
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0 0 10px 0; }
+p { margin: 0 0 12px 0; }
+ul { margin: 0 0 12px 0; padding-left: 20px; }
+/*-- layout --*/
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+/*-- Navigation --*/
+nav {
+  position: sticky;
+  top: 0;
+  background: #0c0d10;
+  border-bottom: 1px solid #262a33;
+  padding: 14px 0;
+  z-index: 10;
+body.light nav {background: #fbfaf8; border-color: #e2ded6; }
 
+.nav-inner{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.brand { font-weight: 700; margin-right: auto; }
+.nav-inner a.nav-link {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: #a0a7b4;
+  font-size: 0.9rem;
+}
+body.light .nav-inner a.nav-link { color: #5a6069; }
+.nav-inner a.nav-link:hover,
+.nav-inner a.nav-link.active {
+  background: #1c1f27;
+  color: #e8eaf0;
+}
+body.light .nav-inner a.nav-link:hover,
+body.light .nav-inner a.nav-link.active {
+  background: #f4f2ee;
+  color: #17181c;
+}
+#theme-toggle {
+  background: none;
+  border: 1px solid #262a33;
+  color: #a0a7b4;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+body.light #theme-toggle { border-color: #e2ded6; color: #5a6069; }
+
+/*-- Buttons --*/
         button{
             padding: 10px 20px;
             font-size: 16px;
@@ -29,7 +93,7 @@
         <!-- Social Icons: LinkedIn, GitHub. -->
     </header>
 
-    <button id="myBtn">Click Me!</button>
+    <button id="Resume">Click Me!</button>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -38,11 +102,6 @@
             <h3>Roguelike Dungeon Crawler</h3>
             <p>A turn-based dungeon crawler built in Python with Pygame. Features procedural generation and permadeath. Actively in development.</p>
             <!-- Placeholder for a GitHub link, screenshot, or Itch.io embed -->
-        </div>
-        <!-- Project 2 -->
-        <div class="project">
-            <h3>ClassBattle: Turn-Based RPG</h3>
-            <p>A Pokemon-style turn-based combat game with class-based systems and AI opponents. Created to prototype complex RPG mechanics.</p>
         </div>
     </section>
 
@@ -61,7 +120,7 @@
 
     <script>
         // --- Javascript interactivity ---
-        const button = document.getElementById('myBtn')
+        const button = document.getElementById('Resume')
 
         button.addEventListener('click', () => {
             alert('Hello');
@@ -69,3 +128,5 @@
     </script>
 </body>
 </html>
+
+
