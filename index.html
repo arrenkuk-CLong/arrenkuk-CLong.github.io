@@ -6,6 +6,19 @@
     <title>Arren Kuk · Game Dev Portfolio</title>
     <style>
         /* --- CSS Styling, dark, clean theme --- */
+        body { 
+            font-family : Sans-serif;
+            background-color: #f5e0dc;
+            color: #282828;
+            text-align: center;
+            pading-top: 50px;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -15,6 +28,8 @@
         <p>Montreal · McGill University</p>
         <!-- Social Icons: LinkedIn, GitHub. -->
     </header>
+
+    <button id="myBtn">Click Me!</button>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -41,11 +56,16 @@
     </section>
 
     <footer>
-        <p>Built from scratch by Arren Kuk · 2026</p>
+        <p>Temporary portfolio by Arren Kuk · 2026</p>
     </footer>
 
     <script>
         // --- Javascript interactivity ---
+        const button = document.getElementById('myBtn')
+
+        button.addEventListener('click', () => {
+            alert('Hello');
+        });
     </script>
 </body>
 </html>
