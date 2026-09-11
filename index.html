@@ -469,9 +469,7 @@ function postRow(p) {
          '</a>';
 }
 
-/* ============================================================
-   VIEWS
-   ============================================================ */
+/* -- VIEWS and UI -- */
 
 function viewHome() {
   var latest = sortPosts().slice(0, 3);
@@ -507,7 +505,7 @@ function viewHome() {
     '<header class="hero">' +
       '<span class="eyebrow">Open to internships · Summer 2027</span>' +
       '<h1>Arren Kuk</h1>' +
-      '<p class="lead">' + PROFILE.roles + '. I\'m ' + PROFILE.name.split(" ")[0] + ", a SWE co-op Freshman at McGill and a solo Game Dev on the side. I'm interested in and enjoy building experiences that can make others' day feel easier.</p>" +
+      '<p class="lead">' + PROFILE.roles + '. I\'m ' + PROFILE.name.split(" ")[0] + ", a SWE co-op Freshman at McGill and a solo Game Dev on the side. I'm interested in and enjoy building experiences that can make others' day easier and a bit more engaging.</p>" +
       '<div>' +
         '<a class="btn btn-primary" href="#/logs">Read the dev logs →</a>' +
         '<br><a class="btn" href="' + PROFILE.resume + '" target="_blank">Résumé →</a>' +
@@ -537,7 +535,7 @@ function viewLogs() {
     '<header class="article-head">' +
       '<a class="back" href="#/">← Back to work</a>' +
       '<h1>Dev Logs</h1>' +
-      '<p class="post-sub">Short notes on what I\'m building, what broke, and what I\'d do differently. ' + POSTS.length + ' posts.</p>' +
+      '<p class="post-sub">Short notes on what I\'m building, my past projects, and updates. ' + POSTS.length + ' posts.</p>' +
     '</header>' +
     '<div class="post-list">' + rows + '</div>' +
   '</div>';
