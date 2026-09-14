@@ -380,14 +380,14 @@ var POSTS = [
     date: "2026-09-07",
     tag: "devlog",
     summary: "Inventory system, FOV, dungeon generation and attack animations.",
-    body: "<p>As my first shipping, I decided to take the foundation of 'Class Game' and turn it into a dungeon crawler. Four features added this week: camera offset for field of view, an inventory bag UI backed by JSON, attack animations, and procedural dungeon generation with BFS.</p>" +
+    body: "<p>As my first shipping, I took the foundation of 'Class Game' and implemented the battle mechanics for my new dungeon crawler. Four features added this week: camera offset for field of view, an inventory bag UI backed by JSON, attack animations, and procedural dungeon generation with BFS.</p>" +
           "<h2>Field of view</h2>" +
           "<p>I created the function <strong>fov_tiles</strong> - where every tile within the visible FOV radius of 8 tiles relative to the player's (x, y) position is added to the set visible.</p>" +
           "<pre><code>px, py = player_tile\n    for x in range(px - radius, px + radius + 1):\n    for y in range (py - radius, py + radius + 1):\n    if not dungeon.in_bounds(x, y):\n    continue</code></pre>" +
           "<p> With the addition of a <strong>camera_offset</strong> function that centers the player tile to the center of the screen, you can achieve a result where dungeon tiles are only drawn within the FOV radius at the center of the screen.</p>" +
           "<pre><code>visible = fov_tiles(dungeon, player_tile)\n offset_x, offset_y = camera_offset(player_tile, tile_px)\n #draw dungeon tiles\n    pygame.draw.rect(screen, TILE_COLORS[dungeon.tiles[x][y]], rect)</code></pre>" +
           "<h2>Inventory JSON</h2>" +
-          "<p>A separate JSON dictionary file was created to store the name, effects, and quantity of an item. Currently, that item is only a health potion, but I plan to add more soon. The little bag icon I made on Piskel, Here's what it looks like.</p>" +
+          "<p>A JSON file was created to store the name, effects, and quantity of an item. Currently, the only item in the file is a health potion, but I plan to add more soon. The little bag icon is something I created on Piskel, Here's what it looks like.</p>" +
           "<img src=\"Inventory_bag.png\" alt=\"Inventory UI Preview\" style=\"max-width: 100%; height: auto;\">" +
           "<blockquote>The little bag icon toggles between open and closed every time the player presses the 'E' Key</blockquote>" +
           "<h2>Sword and Eye attack animations</h2>" +
