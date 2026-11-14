@@ -370,13 +370,32 @@ var PROJECTS = [
 var SKILLS = [
   { label: "Languages", items: ["Python ", "C# "] },
   { label: "Engines",   items: ["Pygame ", "Unity "] },
-  { label: "Tools",     items: ["Visual Studio Code ", "Blender ", "Figma ", "Piskel(2D Art)"] }
+  { label: "Tools",     items: ["Visual Studio Code ", "Blender ", "Figma "] }
 ];
 
 var POSTS = [
   {
+    slug: "Untitled-dungeon-progress-two",
+    title: "Untitled Dungeon game November Devlog",
+    date: "2026-11-13",
+    tag: "devlog",
+    summary: "Organized codebase, save and load system and permadeath, leveling and progression system, Status effects, a lot of pixel art, HUD, and explore state revamp.",
+    body:"<p> McGill Midterm season just ended. This is everything I did in over two months of gamedev and studying.</p>"+
+         "<h2> Current Gameplay: </h2>" +
+         "<p>Art turned out to be pretty important in my game; aside from revamping the entire codebase architecture and adding a couple of new features, I spent most of my time making assets for the map, character sprites, and the HUD (used Figma to iterate over designs).</p>"+
+         "<video src=\"UDG_Demo.mp4\" autoplay loop muted playsinline style=\"max-width: 100%; height: auto;\"></video>" +
+         "<h2>Sept-Nov Progress</h2>" +
+         "<img src=\"Progress.png\" alt=\"Semester Progress\" style=\"max-width: 100%; height: auto;\">" +
+         "<h2>Nov-Dec Roadmap</h2>" +
+         "<p>I aim to have at least 60% of it done by Dec 1st. Could be hard since finals season is coming and I'm participating in a hackathon next week/</p>"+
+         "<pre><code>#TODO Redraw Battle State asset\n#TODO Four more enemy types and a boss\n#TODO Improve Battle HUD\n#TODO Map lighting (glows)\n#TODO Add win condition\n#TODO Menu and Stats screen art (commissioned to a frien :D)</code></pre>"+
+         "<h2>Idle animation preview...</h2>"+
+         "<img src=\"SwordBattle_Idle.gif\" alt=\"Idle animation\" style=\"max-width: 100%; height: auto;\">" +
+
+  },
+  {
     slug: "dungeon-crawler-progress",
-    title: " Dungeon Crawler Progress update",
+    title: " Dungeon Crawler Progress Update",
     date: "2026-09-07",
     tag: "devlog",
     summary: "Inventory system, FOV, dungeon generation and attack animations.",
@@ -392,7 +411,7 @@ var POSTS = [
           "<blockquote>The little bag icon toggles between open and closed every time the player presses the 'E' Key</blockquote>" +
           "<h2>Sword and Eye attack animations</h2>" +
           "<p>Using Piskel again, I created GIF animations for the Sword Character and Eye enemy. frames are iterated <code>self.current_frame += 1</code> every time the player or enemy attacks</p>" +
-          "<img src=\"SwordAnim.gif\" alt=\"Inventory UI Preview\" style=\"max-width: 100%; height: auto;\">" +
+          "<img src=\"SwordAnim.gif\" alt=\"Sword animation\" style=\"max-width: 100%; height: auto;\">" +
           "<p>What the turn-based Battle mode looks like right now:</p>" +
           "<video src=\"attack_anim.mp4\" autoplay loop muted playsinline style=\"max-width: 100%; height: auto;\"></video>" +
           "<h2>Procedural Dungeon Generation</h2>" +
@@ -514,11 +533,11 @@ function viewHome() {
     '</header>' +
     '<hr>' +
     '<section>' +
-      '<div class="sec-head"><h2>Selected Projects</h2></div>' +
+      '<div class="sec-head"><h2>Projects</h2></div>' + //change
       '<div>' + projectHTML + '</div>' +
     '</section>' +
     '<section>' +
-      '<div class="sec-head"><h2>Recent dev logs</h2><a class="link-more" href="#/logs">View all (' + POSTS.length + ') →</a></div>' +
+      '<div class="sec-head"><h2>Recent dev logs</h2><a class="link-more" href="#/logs">View all (' + POSTS.length + ') →</a></div>' + //dev log board
       '<div class="post-list">' + postsHTML + '</div>' +
     '</section>' +
     '<section>' +
